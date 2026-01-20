@@ -16,6 +16,6 @@ run: compile
 	./$(BUILD_DIR)/$(BINARY_NAME)
 
 clean:
-	@echo "Cleaning build artifacts..."
+	@echo "Cleaning build ..."
 	rm -rf $(BUILD_DIR)
 	@echo "Clean complete."
