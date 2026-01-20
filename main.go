@@ -14,8 +14,18 @@ func main() {
 	for !victoire && !matchNul {
 		affichTab(tableau)
 
-		caseX, caseY := choixUtile(tableau, utilisateur)
-		placer := placeChoix(&tableau, caseX, caseY, utilisateur)
+		var placer bool
+		var caseX, caseY int
+
+		if utilisateur == 2 {
+			fmt.Println("L'IA", utilisateur, "réfléchit...")
+			caseX, caseY = meilleurCoup(tableau, utilisateur)
+			placer = placeChoix(&tableau, caseX, caseY, utilisateur)
+		} else {
+			fmt.Println("L'IA", utilisateur, "réfléchit...")
+			caseX, caseY = meilleurCoup(tableau, utilisateur)
+			placer = placeChoix(&tableau, caseX, caseY, utilisateur)
+		}
 
 		if placer {
 			victoire = detectionsVictoire(tableau, utilisateur)
